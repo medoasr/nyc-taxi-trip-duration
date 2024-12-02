@@ -270,7 +270,6 @@ def approach5(x_train,t_train,x_val,t_val):
     
 data_path_train=r"split/train.csv"
 data_path_val=r"split/val.csv"
-data_path_test=r"split_sample/test.csv"
 
 
 x_train,t_train=prepare_data(data_path_train)
@@ -282,18 +281,7 @@ x_val,t_val=prepare_data(data_path_val)
 
 
 
-# approach1(x_train,t_train,x_val,t_val)  train r2=.429 , val r2=.4441
-# approach3(x_train,t_train,x_val,t_val) #poly degree 3 & standard scaler train R2=0.6224286181921248 val R2=0.6428725952492766
-# Model,column_transformer,Selected_feats,train_r2,val_r2,test_r2=approach1(x_train,t_train,x_val,t_val)
 Model,column_transformer,Selected_feats,train_r2,val_r2=approach5(x_train,t_train,x_val,t_val)
-#try your best
-# ok approcah 2 is good for now we try remove outlires from specific columns as eda
-# do like approach 3 for more systamtic way and 
-# read document if you have  a problem
-#using log in approach 3 increased performance but not too much so i will try outlires and report
-#consider in approcah 4 or 5 using multiple distances and see if one is best or must all
-#then consider metadata for this fkn project learn how to do it is ez you have all approaches
-#approcah 5 add bearing (direction) and may use delete in ferquent categories
 
 model_data = {
         'version': 'approach5_Model',
